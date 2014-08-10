@@ -12,6 +12,12 @@ namespace AzureAestheticsCMS.Controllers
     {
         //
         // GET: /MailingSurface/
+        DB_99C350_SeasonDBEntities _db;
+
+        public MailingSurfaceController()
+        {
+            _db = new DB_99C350_SeasonDBEntities();
+        }
 
         public ActionResult Index()
         {
@@ -21,15 +27,13 @@ namespace AzureAestheticsCMS.Controllers
         [HttpPost]
         public ActionResult FormPost(MailingViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                return View("Thanks");
-            }
-            else
-            {
-               return RedirectToCurrentUmbracoPage();
-            }
+            if (!ModelState.IsValid)
+                return CurrentUmbracoPage();
 
+            _db.Contacts.
+
+
+            return CurrentUmbracoPage();
             
         }
 

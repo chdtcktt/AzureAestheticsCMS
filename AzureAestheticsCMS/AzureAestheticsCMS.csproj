@@ -122,6 +122,8 @@
       <HintPath>..\packages\UmbracoCms.Core.7.1.4\lib\System.Data.SqlServerCe.Entity.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -238,7 +240,31 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AzureDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AzureDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AzureDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AzureDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AzureDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AzureDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contact.cs">
+      <DependentUpon>AzureDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>AzureDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\MailingViewModel.cs" />
+    <Compile Include="Models\Special.cs">
+      <DependentUpon>AzureDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -331,6 +357,23 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <EntityDeploy Include="Models\AzureDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AzureDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AzureDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AzureDBModel.edmx</DependentUpon>
+      <LastGenOutput>AzureDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AzureDBModel.edmx.diagram">
+      <DependentUpon>AzureDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\AzureDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AzureDBModel.edmx</DependentUpon>
+      <LastGenOutput>AzureDBModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="masterpages\dummy.txt" />
     <Content Include="media\dummy.txt" />
@@ -374,6 +417,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
