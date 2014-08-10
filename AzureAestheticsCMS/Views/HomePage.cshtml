@@ -31,18 +31,9 @@
 
         <section>
             <h3>Get on our mailing list!</h3>
-            @*@using (Html.BeginForm())
-            {
-
-
-                @Html.ValidationSummary()
-                @Html.TextBoxFor(x => x.Email)
-                <br />
-                <br />
-
-                <input class="btn btn-primary" type="submit" value="Submit" />
-
-            }*@
+            
+            @Html.Action("Index", "MailingSurface")
+          
         </section>
 
         <section>
