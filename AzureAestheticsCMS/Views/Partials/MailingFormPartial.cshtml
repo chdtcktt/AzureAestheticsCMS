@@ -1,14 +1,25 @@
 ﻿@model AzureAestheticsCMS.Models.MailingViewModel
 
 
-
-
-@using (Html.BeginUmbracoForm<AzureAestheticsCMS.Controllers.MailingSurfaceController>("FormPost"))
+@if(TempData["success"] == null)
 {
-    <div class="form-group">
-        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.Email)
-    </div>
-    <input class="btn btn-primary" type="submit" value="Submit" />
+    using(Html.BeginUmbracoForm<AzureAestheticsCMS.Controllers.MailingSurfaceController>("FormPost"))
+    {
+        <div class="form-group">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Email)
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit" />
 
+    }
 }
+else
+{
+    <p class="alert alert-success">
+        So glad you decided to be on our mailing list!
+        We will be sending you specials very soon.
+    </p>
+}
+
+
+

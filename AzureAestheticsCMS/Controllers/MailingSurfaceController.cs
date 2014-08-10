@@ -24,17 +24,24 @@ namespace AzureAestheticsCMS.Controllers
             return PartialView("MailingFormPartial",new MailingViewModel());
         }
 
+        /// <summary>
+        ///for form post data on email text box 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult FormPost(MailingViewModel model)
         {
             if (!ModelState.IsValid)
                 return CurrentUmbracoPage();
 
-            _db.Contacts.
+            var data = new Contact {CreatedDate = DateTime.Now, Email = model.Email};
+            _db.Contacts.Add(data);
+            _db.SaveChanges();
 
+            TempData["success"] = true;
 
-            return CurrentUmbracoPage();
-            
+            return RedirectToCurrentUmbracoPage();
         }
 
     }
