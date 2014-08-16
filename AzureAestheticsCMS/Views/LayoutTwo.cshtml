@@ -1,23 +1,36 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-	ViewBag.Title = @Umbraco.Field("pageName");
+    ViewBag.Title = @Umbraco.Field("pageName");
     Layout = "SiteLayout1.cshtml";
 }
 
 <div class="layout-two">
     <section id="title">
         <h3>@Umbraco.Field("pageName")</h3>
-			
-	@Umbraco.Field("topmessage")
-       
+
+        @Umbraco.Field("topmessage")
+
     </section>
 
     <section>
+
+
         <table>
             <tbody>
-                @Umbraco.Field("lineItems")
+
+                @foreach (var c in CurrentPage.bodycontent)
+                {
+                    <tr>
+                        <td>
+                            <h5>@c.service</h5>
+                            <p>@c.description</p>
+                        </td>
+                        <td>@c.price</td>
+                    </tr>
+                }
             </tbody>
         </table>
+
     </section>
 
 </div>
