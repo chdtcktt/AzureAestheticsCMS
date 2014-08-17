@@ -7,118 +7,154 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <link href='http://fonts.googleapis.com/css?family=Italianno' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Simonetta' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width" />
-    <link href="~/css/styles.css" rel="stylesheet" type="text/css" />
+    <head>
+        <link href='http://fonts.googleapis.com/css?family=Italianno' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Simonetta' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width" />
+        <link href="~/css/styles.css" rel="stylesheet" type="text/css" />
 
-    <title>@ViewBag.Title</title>
-</head>
-<body>
-    <header>
-        <div id="utility">
-	        @Umbraco.Field("utilityNav")
-        </div>
+        <title>@ViewBag.Title</title>
+    </head>
+    <body>
+        <header>
+            <div id="utility">
 
-        <a href="/">    
-            <img src="~/Content/images/bannerwithlogo.jpg" alt="Azure Aesthetics" />
-        </a>
-    </header>
+                @Umbraco.Field("utilityNav")
 
-    <nav class="navbar navbar-default" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Skin and Body
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="~/SkinAndBody/Facials">Facials</a></li>
-                        <li><a href="~/SkinAndBody/Makeup">Makeup</a></li>
-                        <li><a href="~/SkinAndBody/Body">Body Treatments</a></li>
-                        <li><a href="~/SkinAndBody/BodyBronzing">Body Bronzing</a></li>
-                        <li><a href="~/SkinAndBody/BioslimmingWrap">Bioslimming Wrap</a></li>
-                    </ul>
-                </li>
+            </div>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Wax & Tint
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="~/WaxAndTint/WaxServices">Wax Services</a></li>
-                        <li><a href="~/WaxAndTint/TintServices">Tint Services</a></li>
-                    </ul>
-                </li>
+            <a href="/">
+                <img src="~/Content/images/bannerwithlogo.jpg" alt="Azure Aesthetics" />
+            </a>
+        </header>
 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Non-Invasive LipoLaser
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="~/NoninvasiveLipolaser/LipoLaser">LipoLaser Services</a></li>
-                        <li><a href="~/NoninvasiveLipolaser/LipoLaserBNA">Before and After</a></li>
-                    </ul>
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Skin and Body
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="~/SkinAndBody/Facials">Facials</a>
+                            </li>
+                            <li>
+                                <a href="~/SkinAndBody/Makeup">Makeup</a>
+                            </li>
+                            <li>
+                                <a href="~/SkinAndBody/Body-Treatments">Body Treatments</a>
+                            </li>
+                            <li>
+                                <a href="~/SkinAndBody/Body-Bronzing">Body Bronzing</a>
+                            </li>
+                            <li>
+                                <a href="~/SkinAndBody/BioslimmingWrap">Bioslimming Wrap</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Wax & Tint
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="~/WaxAndTint/WaxServices">Wax Services</a>
+                            </li>
+                            <li>
+                                <a href="~/WaxAndTint/TintServices">Tint Services</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Non-Invasive LipoLaser
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="~/NoninvasiveLipolaser/LipoLaser">LipoLaser Services</a>
+                            </li>
+                            <li>
+                                <a href="~/NoninvasiveLipolaser/LipoLaserBNA">Before and After</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Infrared Detox Treatment
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="~/InfaredDetox/InfaredSlimming">Infared Slimming</a>
+                            </li>
+                            <li>
+                                <a href="~/InfaredDetox/InfaredDetox">Infared Detox</a>
+                            </li>
+                            <li>
+                                <a href="~/InfaredDetox/WBV">Whole Body Vibration</a>
+                            </li>
+                            @*<li><a href="~/InfaredDetox/DetoxFootBath">Detox Foot Bath</a></li>*@
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="~/Products/ThreeOTwoSkinCare">302 Skin Care Line</a>
+                            </li>
+                            <li>
+                                <a href="~/Products/JaneIredale">Jane Iredale Mineral Cosmetics</a>
+                            </li>
+                            <li>
+                                <a href="~/Products/Bioslimming">Bioslimming</a>
+                            </li>
+                            <li>
+                                <a href="~/Products/OtherProducts">Other Products</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="~/Home/Specials">SPECIALS!</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+        @RenderBody()
+        @RenderSection("scripts", required: false)
+
+        <footer>
+            <ul>
+                <li>&copy;2013 - 2014, All Rights Reserved</li>
+                <li>|</li>
+                <li>Built with love by Chad Tackett</li>
+                <li>|</li>
+                <li>
+                    <a href="mailto:chdtcktt@thatcodeguy.net">chdtcktt@thatcodeguy.net</a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Infrared Detox Treatment
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="~/InfaredDetox/InfaredSlimming">Infared Slimming</a></li>
-                        <li><a href="~/InfaredDetox/InfaredDetox">Infared Detox</a></li>
-                        <li><a href="~/InfaredDetox/WBV">Whole Body Vibration</a></li>
-                        @*<li><a href="~/InfaredDetox/DetoxFootBath">Detox Foot Bath</a></li>*@
-                    </ul>
+                <li>|</li>
+                <li>
+                    <a href="http://thatcodeguy.net">www.thatcodeguy.net</a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Products
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="~/Products/ThreeOTwoSkinCare">302 Skin Care Line</a></li>
-                        <li><a href="~/Products/JaneIredale">Jane Iredale Mineral Cosmetics</a></li>
-                        <li><a href="~/Products/Bioslimming">Bioslimming</a></li>
-                        <li><a href="~/Products/OtherProducts">Other Products</a></li>
-                    </ul>
-                </li>
-                <li><a href="~/Home/Specials">SPECIALS!</a></li>
             </ul>
-        </div><!-- /.navbar-collapse -->
-    </nav>
+        </footer>
 
-
-
-    @RenderBody()
-    @RenderSection("scripts", required: false)
-
-
-
-    <footer>
-        <ul>
-            <li>&copy;2013 - 2014, All Rights Reserved</li>
-            <li>|</li>
-            <li>Built with love by Chad Tackett</li>
-            <li>|</li>
-            <li><a href="mailto:chdtcktt@thatcodeguy.net">chdtcktt@thatcodeguy.net</a></li>
-            <li>|</li>
-            <li><a href="http://thatcodeguy.net">www.thatcodeguy.net</a></li>
-        </ul>
-    </footer>
-
-    <script src="/scripts/jquery-1.9.1.min.js"></script>
-    <script src="/scripts/bootstrap.min.js"></script>
-</body>
+        <script src="/scripts/jquery-1.9.1.min.js"></script>
+        <script src="/scripts/bootstrap.min.js"></script>
+    </body>
 
 </html>

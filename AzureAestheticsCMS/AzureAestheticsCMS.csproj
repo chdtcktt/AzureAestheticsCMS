@@ -268,6 +268,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\styles.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\images\302 ProductPage\302 Logo.gif" />
     <Content Include="Content\images\302 ProductPage\302SKINCARE.jpg" />
@@ -410,10 +411,13 @@
     <Content Include="Views\HomePage.cshtml" />
     <Content Include="Views\SiteLayout1.cshtml" />
     <Content Include="Views\Partials\MailingFormPartial.cshtml" />
+    <Content Include="Views\LayoutTwo.cshtml" />
+    <Content Include="Views\LayoutThree.cshtml">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="css\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
