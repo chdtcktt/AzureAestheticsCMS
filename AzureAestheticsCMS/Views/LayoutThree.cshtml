@@ -15,7 +15,7 @@
             }
             else
             {
-                <h3>@Umbraco.Field("pageName")</h3>
+                            <h3>@Umbraco.Field("pageName")</h3>
             }
         }
         <p>@Umbraco.Field("topmessage")</p>
@@ -24,14 +24,15 @@
     <section id="top-content">
         <aside>
             <h4>@Umbraco.Field("lefttoptitle")</h4>
+            <p>@Umbraco.Field("pricingmessage")</p>
             <table>
                 <tbody>
                     @foreach (var item in CurrentPage.leftpricing)
                     {
-                        <tr>
-                            <td>@item.description</td>
-                            <td>@item.price</td>
-                        </tr>
+                                            <tr>
+                                                <td>@item.description</td>
+                                                <td>@item.price</td>
+                                            </tr>
                     }
 
                 </tbody>
@@ -54,73 +55,118 @@
         <article>
             <h4>@Umbraco.Field("righttoptitle")</h4>
 
+            @Umbraco.Field("rightitemslist")
+
+
+
             @{
-                if (Model.Content.HasValue("rightimage"))
+                if (Model.Content.HasValue("rightImageTop"))
                 {
-                    var mediaItem = Umbraco.TypedMedia(Model.Content.GetPropertyValue("rightimage")); 
+                    var mediaItem = Umbraco.TypedMedia(Model.Content.GetPropertyValue("rightImageTop")); 
                     <img src="@mediaItem.GetPropertyValue("umbracoFile")" />    
+                }
+            }
+
+            @{
+                if (Model.Content.HasValue("rightImageBottom"))
+                {
+                    var mediaItem = Umbraco.TypedMedia(Model.Content.GetPropertyValue("rightImageBottom"));
+                    <img src="@mediaItem.GetPropertyValue("umbracoFile")" />
                 }
             }
     
 
-            @Umbraco.Field("rightitemslist")
-
+          
         </article>
 
     </section>
 
-    <section id="bottom-content">
-        <ul id="myTab" class="nav nav-tabs">
-            <li class="active">
-                <a href="#first" data-toggle="tab">@Umbraco.Field("tabOne")</a>
-            </li>
-            <li>
-                <a href="#second" data-toggle="tab">@Umbraco.Field("tabTwo")</a>
-            </li>
-            <li>
-                <a href="#third" data-toggle="tab">@Umbraco.Field("tabThree")</a>
-            </li>
-        </ul>
 
-        <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade in active" id="first">
+    @{
+        if (Model.Content.HasValue("tabOne"))
+        {
+                    <section id="bottom-content">
+
+                        <ul id="myTab" class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#first" data-toggle="tab">@Umbraco.Field("tabOne")</a>
+                            </li>
+                            <li>
+                                <a href="#second" data-toggle="tab">@Umbraco.Field("tabTwo")</a>
+                            </li>
+                            <li>
+                                <a href="#third" data-toggle="tab">@Umbraco.Field("tabThree")</a>
+                            </li>
+                            <li>
+                                <a href="#fourth" data-toggle="tab">@Umbraco.Field("tabFour")</a>
+                            </li>
+                        </ul>
     
-                @{
-                    if (Model.Content.HasValue("tabOneImage"))
-                    {
-                        var mediaItem = Umbraco.TypedMedia(Model.Content.GetPropertyValue("tabOneImage"));
-                        <img src="@mediaItem.GetPropertyValue("umbracoFile")" />
-                    }
-                }
-			    @Umbraco.Field("tabOneContent")
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane fade in active" id="first">
+    
+                                <article>
+                                    @Umbraco.Field("tabOneContent")
+                                </article>
+    
+                                <aside>
+                                    @{
+                                        if (Model.Content.HasValue("tabOneImage"))
+                                        {
+                                            var mediaItem = Umbraco.TypedMedia(Model.Content.GetPropertyValue("tabOneImage"));
+                                            <img id="skinandbody-bioslimming-picbottom" src="@mediaItem.GetPropertyValue("umbracoFile")" />
+                                        }
+                                    }
+                                </aside>
+    
+                            </div>
+                            <div class="tab-pane fade" id="second">
+                                @{
+                                    if (Model.Content.HasValue("tabTwoImage"))
+                                    {
+                                        var mediaItem = Umbraco.TypedMedia(Model.Content.GetPropertyValue("tabTwoImage"));
+                                        <img src="@mediaItem.GetPropertyValue("umbracoFile")" />
+                                    }
+                                }
+        
+                                @Umbraco.Field("tabTwoContent")
+                            </div>
+                            <div class="tab-pane fade" id="third">
+    
+                                @{
+                                    if (Model.Content.HasValue("tabThreeImage"))
+                                    {
+                                        var mediaItem = Umbraco.TypedMedia(Model.Content.GetPropertyValue("tabThreeImage"));
+                                        <img src="@mediaItem.GetPropertyValue("umbracoFile")" />
+                                    }
+                                }
+                                @Umbraco.Field("tabThreeContent")
+        
+                            </div>
+                            <div class="tab-pane fade" id="fourth">
 
-            </div>
-            <div class="tab-pane fade" id="second">
-                @{
-                    if (Model.Content.HasValue("tabTwoImage"))
-                    {
-                        var mediaItem = Umbraco.TypedMedia(Model.Content.GetPropertyValue("tabTwoImage"));
-                        <img src="@mediaItem.GetPropertyValue("umbracoFile")" />
-                    }
-                }
-
-                @Umbraco.Field("tabTwoContent")
-            </div>
-            <div class="tab-pane fade" id="third">
-               
-                @{
-                    if (Model.Content.HasValue("tabThreeImage"))
-                    {
-                        var mediaItem = Umbraco.TypedMedia(Model.Content.GetPropertyValue("tabThreeImage"));
-                        <img src="@mediaItem.GetPropertyValue("umbracoFile")" />
-                    }
-                }
-                @Umbraco.Field("tabThreeContent")
-
-            </div>
-        </div>
-        <p id="bottom-message">We use Norvell XlaTan Ph balancing spray prior to your bronze. This important step helps balance the skins ph to create a deeper, more even tan. We are using Norvell Hydrofirm sprat as a 'sealant' after the bronze to assist in lasting results.</p>
-
-    </section>
+                                @{
+                                    if (Model.Content.HasValue("tabFourTopImage"))
+                                    {
+                                        var mediaItem = Umbraco.TypedMedia(Model.Content.GetPropertyValue("tabFourTopImage"));
+                                        <img src="@mediaItem.GetPropertyValue("umbracoFile")" />
+                                    }
+                                }
+        
+                                @{
+                                    if (Model.Content.HasValue("tabFourBottomImage"))
+                                    {
+                                        var mediaItem = Umbraco.TypedMedia(Model.Content.GetPropertyValue("tabFourBottomImage"));
+                                        <img src="@mediaItem.GetPropertyValue("umbracoFile")" />
+                                    }
+                                }
+                                @Umbraco.Field("tabFourContent")
+                            </div>
+                        </div>
+    
+                    </section>
+    
+        }
+    }
 
 </div>
